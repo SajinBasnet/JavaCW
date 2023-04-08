@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.sql.Connection;
 
@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class UserSignUpDAO {
 	
@@ -17,7 +18,7 @@ public class UserSignUpDAO {
 		Connection con = DriverManager.getConnection(url, username, password);
 		return con;
 	} 
-	public  String registerStudent(String uName, String uAddress, String uContact, String uEmail, String uGender, String uPass) {
+	public  String registerUser(String uName, String uAddress, String uContact, String uEmail, String uGender, String uPass) {
 		try {
 			
 			System.out.println(uName+uAddress+uContact+uEmail+uGender+uPass);
@@ -54,6 +55,65 @@ public class UserSignUpDAO {
 		
 		}
 		
+	
+
+public ResultSet fetchForLogin(String uEmail, String uPass) throws ClassNotFoundException  {
+	try {
+		Connection con = getConnection();
+		String query = "select * from signupdata where email = '"+ uEmail +"' and password = '" +uPass+ "'" ;
+		PreparedStatement st = con.prepareStatement(query);
+		ResultSet table = st.executeQuery();
+
+		
+		return table;
+		
 	}
+	catch(SQLException e) {
+		e.printStackTrace();
+	}
+
+	
+	return null;
 	
 	
+	
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//String uName, String uAddress, String uContact, String uEmail, String uGender, String uPass
+
+
+
+
+
+//public ArrayList<SignUp> fetchStudentRecord()  {
+//	ArrayList<SignUp>userData=new ArrayList<>();
+//	Connection con=null;
+//	
+//	try {
+//		Connection con = getConnection();
+//		String query = "select * from signupdata";
+//		PreparedStatement st = con.prepareStatement(query);
+//		ResultSet table = st.executeQuery();
+//		while(table.next()) {
+//			String uNmae = table.getString(1);
+//			String name=table.getString(2);
+//			String gender=table.getString(3);
+//			String password=table.getString(4);
+//			String imagePath=table.getString(5);
+//			
+//			Student student=new Student(id,name,gender,password,imagePath);
+//			studentList.add(student);}
+//	
+//	

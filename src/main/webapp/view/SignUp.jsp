@@ -62,13 +62,13 @@
         <div class="line"></div>
         <div class="facebookLogin">
           <a href="">
-            <img src="./images/facebook.png" alt="Login with facebook" />
+            <img src="../images/facebook.png" alt="Login with facebook" />
           </a>
         </div>
 
         <div class="GoogleLogin">
           <a href="#">
-            <img src="./images/google2.png" />
+            <img src="../images/google2.png" />
           </a>
         </div>
       </div>

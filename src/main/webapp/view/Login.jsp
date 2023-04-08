@@ -32,27 +32,27 @@
         </div>
       </div>
        <div class="Loginform">
-      <form>
+      <form action="../LoginServlet" method="post">
           <h2>Login Form</h2> 
           <label>Email: </label>
         
-          <input type="email" placeholder="input your email" /><br /><br />
+          <input type="email" placeholder="input your email" name=lgEmail /><br /><br />
           
           <label>Password: </label>
-          <input type="password" placeholder="input your password" /><br /><br />
-           <button class="lgbutton">Login</button>
+          <input type="password" placeholder="input your password" name="lgPass" /><br /><br />
+           <input type="submit" value="Login" class="lgbutton">
         </form>
         <p>Don't have an account? <a href="SignUp.html">SignUp</a></p>
         <div class="line"></div>
         <div class="facebookLogin">
           <a href="">
-            <img src="./images/facebook.png" alt="SignUp with facebook" />
+            <img src="../images/facebook.png" alt="SignUp with facebook" />
           </a>
         </div>
 
         <div class="GoogleLogin">
           <a href="#">
-            <img src="./images/google2.png" />
+            <img src="../images/google2.png" />
             
           </a>
         </div>
